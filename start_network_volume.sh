@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 echo "Worker Initiated"
 
 if [[ ! -L /workspace ]]; then
