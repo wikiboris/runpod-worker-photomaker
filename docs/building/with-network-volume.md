@@ -22,7 +22,7 @@ manually below, and then you don't need to follow any of the
 manual instructions.
 
 ```bash
-wget https://raw.githubusercontent.com/ashleykleynhans/runpod-worker-instantid/main/scripts/install.sh
+wget https://raw.githubusercontent.com/wikiboris/runpod-worker-photomaker/main/scripts/install.sh
 chmod +x install.sh
 ./install.sh
 ```
@@ -36,8 +36,8 @@ automatic installation script above.
 ```bash
 # Clone InstantID Serverless Worker repo to /workspace
 cd /workspace
-git clone https://github.com/ashleykleynhans/runpod-worker-instantid.git
-cd runpod-worker-instantid/src
+git clone https://github.com/wikiboris/runpod-worker-photomaker.git
+cd runpod-worker-photomaker/src
 
 # Install Ubuntu updates
 apt update
@@ -71,7 +71,7 @@ python3 download_checkpoints.py
 ```
 3. Download antelopev2 models from Huggingface
 ```bash
-git clone https://huggingface.co/ashleykleynhans/FaceAnalysis models
+git clone https://huggingface.co/wikiboris/FaceAnalysis models
 ```
 
 ## Building the Docker Image
@@ -80,7 +80,7 @@ You can either build this Docker image yourself, your alternatively,
 you can use my pre-built image:
 
 ```
-ashleykza/runpod-worker-instantid:1.0.11
+ashleykza/runpod-worker-photomaker:1.0.11
 ```
 
 If you choose to build it yourself:
@@ -88,7 +88,7 @@ If you choose to build it yourself:
 1. Sign up for a Docker hub account if you don't already have one.
 2. Build the Docker image and push to Docker hub:
 ```bash
-docker build -t dockerhub-username/runpod-worker-instantid:1.0.0 -f Dockerfile.Network_Volume .
+docker build -t dockerhub-username/runpod-worker-photomaker:1.0.0 -f Dockerfile.Network_Volume .
 docker login
-docker push dockerhub-username/runpod-worker-instantid:1.0.0
+docker push dockerhub-username/runpod-worker-photomaker:1.0.0
 ```

@@ -3,8 +3,8 @@
 ## Clone the repo, create a venv and install the requirements
 
 ```bash
-git clone https://github.com/ashleykleynhans/runpod-worker-instantid.git
-cd runpod-worker-instantid
+git clone https://github.com/wikiboris/runpod-worker-photomaker.git
+cd runpod-worker-photomaker
 python3 -m venv venv
 source venv/bin/activate
 cd src

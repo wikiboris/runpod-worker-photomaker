@@ -2,7 +2,7 @@
 from util import post_request, encode_image_to_base64
 
 MODEL_PATH = 'wangqixun/YamerMIX_v8'
-#MODEL_PATH = '/workspace/runpod-worker-instantid/src/models/dynavisionXLAllInOneStylized_releaseV0610Bakedvae.safetensors'
+#MODEL_PATH = '/workspace/runpod-worker-photomaker/src/models/dynavisionXLAllInOneStylized_releaseV0610Bakedvae.safetensors'
 IMAGE_PATH = '../data/mypic.jpg'
 PROMPT = 'a man'
 NEGATIVE_PROMPT = 'nsfw'

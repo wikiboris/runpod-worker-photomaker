@@ -4,15 +4,15 @@ TORCH_VERSION="2.0.1"
 XFORMERS_VERSION="0.0.22"
 
 echo "Deleting InstantID Serverless Worker"
-rm -rf /workspace/runpod-worker-instantid
+rm -rf /workspace/runpod-worker-photomaker
 
 echo "Deleting venv"
 rm -rf /workspace/venv
 
 echo "Cloning InstantID Serverless Worker repo to /workspace"
 cd /workspace
-git clone https://github.com/ashleykleynhans/runpod-worker-instantid.git
-cd runpod-worker-instantid
+git clone https://github.com/wikiboris/runpod-worker-photomaker.git
+cd runpod-worker-photomaker
 
 echo "Installing Ubuntu updates"
 apt update
@@ -23,7 +23,7 @@ apt -y install git-lfs
 git lfs install
 
 echo "Creating and activating venv"
-cd /workspace/runpod-worker-instantid
+cd /workspace/runpod-worker-photomaker
 python3 -m venv /workspace/venv
 source /workspace/venv/bin/activate
 
@@ -40,13 +40,13 @@ echo "Installing InstantID Serverless Worker"
 pip3 install -r src/requirements.txt
 
 echo "Installing checkpoints"
-cd /workspace/runpod-worker-instantid/src
+cd /workspace/runpod-worker-photomaker/src
 export HUGGINGFACE_HUB_CACHE="/workspace/huggingface-cache/hub"
 export TRANSFORMERS_CACHE="/workspace/huggingface-cache/hub"
 python3 download_checkpoints.py
 
 echo "Downloading antelopev2 models from Huggingface"
-git clone https://huggingface.co/ashleykleynhans/FaceAnalysis models
+git clone https://huggingface.co/wikiboris/FaceAnalysis models
 
 echo "Creating log directory"
 mkdir -p /workspace/logs
